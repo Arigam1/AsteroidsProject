@@ -1,0 +1,50 @@
+//variables
+$color-white: #fff;
+$color-text: black;
+
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+
+$screen-xs-max: 575px;
+$screen-sm-max:767px;
+$screen-md-max:991px;
+$screen-lg-max:1199px;
+
+//mixins
+@mixin font-first {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: normal;
+}
+
+@mixin ul-li {
+    ul{
+        padding-inline-start: 0;
+    }
+
+    ul li{
+        list-style: none;
+    }
+
+    li div:nth-child(2) {
+        flex: 1 0;
+        border-bottom: 1px dotted #000;
+        height: 1em;
+        margin: 0 .4em;
+    }
+}
+
+@mixin hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+
+.section-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-right: 157px;
+    padding-left: 203px;
+}

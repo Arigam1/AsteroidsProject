@@ -1,0 +1,41 @@
+@import '../../scss/variables.scss';
+
+.main {
+    @include font-first;
+    color: $color-text;
+
+    .section-inner{
+
+    }
+
+    &-pannel{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 27px;
+        padding-bottom: 24px;
+        font-size: 16px;
+        line-height: 20px;
+
+        &-checkbox{
+            display: flex;
+
+            input {
+                background: rgba(0, 0, 0, 0.87);
+            }
+
+            &-description{
+                width: 196px;
+                height: 20px;
+                margin-left: 10px;
+            }
+        }
+
+        &-info {
+            input {
+                background: transparent;
+                border: none;
+                outline: none;
+            }
+        }
+    }
+}
