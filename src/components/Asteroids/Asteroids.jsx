@@ -6,12 +6,21 @@ import './Asteroids.scss'
 const Asteroids = () => {
   const { filteredAsteroids, dangerOn, setDangerOn } = useAsteroidList();
   const [inLunar, setInLunar] = useState(false);
+  const [toBeDestroyed, setToBeDestroyed] = useState([]);
+
+  const setToBeDestroyedCb = (id) => {
+    console.log('xxx: ', id);
+    if (!toBeDestroyed.includes(id)) setToBeDestroyed(prev => [...prev, id]);
+  }
+
+
   const handleCheckboxChange = (e) => {
     setDangerOn(e.target.checked);
   };
 
   return (<main className="main">
     <div className="section-inner">
+      {toBeDestroyed + " "}
       <div className="main-pannel">
         <div className="main-pannel-checkbox">
           <input type="checkbox"
@@ -33,6 +42,7 @@ const Asteroids = () => {
             asteroid={asteroid}
             inLunar={inLunar}
             dangerOn={dangerOn}
+            setToBeDestroyedCb={setToBeDestroyedCb}
           />
         );
       })}
