@@ -1,0 +1,52 @@
+@import '../../../scss/variables.scss';
+
+.info{
+    @include font-first;
+    color: $color-text;
+    .section-inner{
+
+    }
+    &-header{
+        height:200px;
+        margin-top: 30px;
+        
+    }
+
+    &-body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 25px;
+        background: lightgray;
+        
+
+
+        &-title{
+            font-size: 30px;
+            line-height: 20px;
+            margin-top: 40px;
+        }
+        &-description{
+            @include ul-li;
+            margin-top: 50px;
+            
+
+            .card-first-info {
+                margin-bottom: 45px;
+                width: 750px;
+    
+                &-item{
+                    display: flex;
+                    margin-bottom: 10px;
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+}
+
+
+
+// background: linear-gradient(90deg, #CFF37D 0%, #FF0844 100%);
+

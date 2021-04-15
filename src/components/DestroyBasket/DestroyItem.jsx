@@ -1,20 +1,19 @@
-import React, { useState } from "react";
-import { NavLink } from 'react-router-dom';
-import './Asteroid.scss'
-import dangerBG from './../../common/img/big.jpg'
-import small from './../../common/img/small.svg'
-import medium from './../../common/img/medium.jpg'
-import { useAsteroidList } from "../../../providers/AsteroidProvider";
-import { useDestroyService } from "../../../providers/DestroyProvider";
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { useAsteroidList } from "../../providers/AsteroidProvider";
+import { useDestroyService } from "../../providers/DestroyProvider";
+import '../Asteroids/Asteroid/Asteroid.scss'
+import dangerBG from './../common/img/big.jpg'
+import small from './../common/img/small.svg'
+import medium from './../common/img/medium.jpg'
 
-const Asteroid = ({ asterId, inLunar }) => {
 
-  const { addAsterToDestroyList } = useDestroyService();
+const DestroyItem = ({ asterId }) => {
   const {
-    deleteAsterFromTheMainList,
+    removeAsterFromDestroyList,
     getAsterFullInfoById,
-  } = useAsteroidList();
-
+  } = useDestroyService();
+  const { inLunar } = useAsteroidList();
   const asteroid = getAsterFullInfoById(asterId);
 
   if (asteroid.isHazardous === false) {
@@ -54,10 +53,9 @@ const Asteroid = ({ asterId, inLunar }) => {
             <div className="card-second-lvl">Оценка:</div>
             <div className="card-second-lvl-check"><b>Не опасен</b></div>
             <div className="card-second-lvl-check"></div>
-            <button onClick={() => {
-              addAsterToDestroyList(asterId);
-              deleteAsterFromTheMainList(asterId);
-            }}>На уничтожение</button>
+            <button onClick={() => removeAsterFromDestroyList(asteroid.id)}>
+              Вызвать бригаду Брюса
+            </button>
           </div>
         </div>
       </div>
@@ -97,10 +95,9 @@ const Asteroid = ({ asterId, inLunar }) => {
           <div className="card-second-lvl">Оценка:</div>
           <div className="card-second-lvl-check"><b>Не опасен</b></div>
           <div className="card-second-lvl-check"></div>
-          <button onClick={() => {
-            addAsterToDestroyList(asterId);
-            deleteAsterFromTheMainList(asterId);
-          }}>На уничтожение</button>
+          <button onClick={() => removeAsterFromDestroyList(asteroid.id)}>
+            Вызвать бригаду Брюса
+          </button>
         </div>
       </div>
     </div>
@@ -140,14 +137,47 @@ const Asteroid = ({ asterId, inLunar }) => {
         <div className="card-second-lvl">Оценка:</div>
         <div className="card-second-lvl-check"><b>Опасен</b></div>
         <div className="card-second-lvl-check"></div>
-        <button onClick={() => {
-          addAsterToDestroyList(asterId);
-          deleteAsterFromTheMainList(asterId);
-        }}>На уничтожение</button>
+        <button onClick={() => removeAsterFromDestroyList(asteroid.id)}>
+          Вызвать бригаду Брюса
+        </button>
       </div>
     </div>
   </div>
 
+  // return (
+  //   <div className="asterToDestroy" style={{ marginBottom: "1rem" }}>
+  //     <div>
+  //       <Link to={`/asteroid/${asterId}`}>
+  //         <h2>{asteroid.name}</h2>
+  //       </Link>
+
+  //       <div>Дата ... {asteroid.date_short}</div>
+
+  //       <div>
+  //         Расстояние {"..."}{" "}
+  //         <span>
+  //           {inLunar
+  //             ? asteroid.distance_lunar + " луны"
+  //             : asteroid.distance + " км"}
+  //         </span>
+  //       </div>
+
+  //       <div>
+  //         Размер {"..."} {asteroid.size + " м"}
+  //       </div>
+  //     </div>
+
+  //     <div>
+  //       <div>
+  //         Оценка:
+  //         {asteroid.isHazardous ? "Опасный" : "Неопасный"}
+  //       </div>
+  //       <button onClick={() => removeAsterFromDestroyList(asteroid.id)}>
+  //         Вызвать бригаду Брюса
+  //       </button>
+  //     </div>
+  //   </div>
+  // );
 };
 
-export default Asteroid;
+export default DestroyItem;

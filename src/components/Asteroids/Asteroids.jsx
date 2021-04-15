@@ -4,34 +4,34 @@ import Asteroid from "./Asteroid/Asteroid";
 import './Asteroids.scss'
 
 const Asteroids = () => {
-  const { filteredAsteroids, dangerOn, setDangerOn } = useAsteroidList();
-  const [inLunar, setInLunar] = useState(false);
-  const [toBeDestroyed, setToBeDestroyed] = useState([]);
-
-  const setToBeDestroyedCb = (id) => {
-    console.log('xxx: ', id);
-    if (!toBeDestroyed.includes(id)) setToBeDestroyed(prev => [...prev, id]);
-  }
+  const {
+    filteredAsteroids,
+    dangerOn,
+    setDangerOn,
+    inLunar,
+    setInLunar,
+  } = useAsteroidList();
 
 
   const handleCheckboxChange = (e) => {
-    setDangerOn(e.target.checked);
+    setDangerOn(!dangerOn);
   };
 
   return (<main className="main">
     <div className="section-inner">
-      {toBeDestroyed + " "}
       <div className="main-pannel">
         <div className="main-pannel-checkbox">
           <input type="checkbox"
+            type="checkbox"
             name="dangerOn"
             onChange={handleCheckboxChange}
+            checked={dangerOn}
           />{" "}
           <div className="main-pannel-checkbox-description">Показать только опасные</div>
         </div>
         <div className="main-pannel-info">
           Расстояние{" "}
-          <button onClick={() => setInLunar(false)}>в километрах</button>
+          <button onClick={() => setInLunar(false)}>в километрах,</button>
           <button onClick={() => setInLunar(true)}>в дистанциях до луны</button>
         </div>
       </div>
@@ -39,10 +39,9 @@ const Asteroids = () => {
         return (
           <Asteroid
             key={asteroid.id}
-            asteroid={asteroid}
+            asterId={asteroid.id}
             inLunar={inLunar}
             dangerOn={dangerOn}
-            setToBeDestroyedCb={setToBeDestroyedCb}
           />
         );
       })}

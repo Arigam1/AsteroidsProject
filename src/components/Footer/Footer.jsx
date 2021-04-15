@@ -4,8 +4,9 @@ import './Footer.scss'
 const Footer = () => {
     const currentYear = new Date().getFullYear();
     return (
-        <footer className="section-inner">
-            <div className="footer">
+        <footer className="footer">
+
+            <div className="section-inner">
                 {currentYear}© Все права и планета защищены
             </div>
         </footer>

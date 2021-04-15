@@ -5,10 +5,20 @@
 .section-header {
     @include font-first;
     color: $color-text;
+    .section-inner {
+        @media (max-width: $screen-md-max) {
+            padding: 0px;
+        }
+
+    }
 
     .section-header-content {
         display: flex;
         justify-content: space-between;
+
+        @media (max-width: $screen-xs-max) {
+            flex-direction: column;
+        }
 
         &-logo{
             display: flex;
@@ -19,12 +29,19 @@
                 height: 48px;
                 margin-top: 37px;
                 margin-bottom: 8px;
+                @media (max-width: $screen-xs-max) {
+                    width: 199px;
+                    margin-top: 8px;
+                }
 
                 a{
                     color: $color-text;
                     font-size: 36px;
                     line-height: 48px;
                     text-decoration: none;
+                    @media (max-width: $screen-xs-max) {
+                        font-size: 24px;
+                    }
                 }
                 a:hover{
                     // @include hover;
@@ -34,16 +51,25 @@
 
                 width: 414px;
                 height: 40px;
-    
                 font-size: 16px;
                 line-height: 20px;
                 margin-bottom: 24px;
+
+                @media (max-width: $screen-xs-max) {
+                    width: 288px;
+                    height: 60px;
+                    margin-bottom:19px;
+                }
             }
         }
 
         &-more{
             display: flex;
             margin-top: 53px;
+            @media (max-width: $screen-xs-max) {
+                margin-top: 19px;
+                margin-bottom: 18px;
+            }
 
             a{
                 color: $color-text;
@@ -70,10 +96,20 @@
         }
     }
     .hr{
-        width: 920px;
         height: 1px;
         left: 203px;
         right: 157px;
+        @media (max-width: $screen-xs-max) {
+            width: 288px;
+        }
+        @media (min-width: $screen-md-max) {
+            width: 920px;
+        }
     }
+    @media (max-width: $screen-lg) {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
 
 }
