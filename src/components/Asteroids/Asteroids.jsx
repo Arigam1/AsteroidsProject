@@ -30,9 +30,9 @@ const Asteroids = () => {
           <div className="main-pannel-checkbox-description">Показать только опасные</div>
         </div>
         <div className="main-pannel-info">
-          Расстояние{" "}
-          <button onClick={() => setInLunar(false)} style={{ fontWeight: 700 }}>в километрах,</button>
-          <button onClick={() => setInLunar(true)} style={{ textDecoration: "underline" }}>в дистанциях до луны</button>
+          Расстояние
+          <button onClick={() => setInLunar(false)} ><span style={{ fontWeight: 700 }}>в километрах,</span></button>
+          <button onClick={() => setInLunar(true)}><span style={{ textDecoration: "underline" }}>в дистанциях до луны</span></button>
         </div>
       </div>
       {filteredAsteroids.map((asteroid) => {

@@ -21,9 +21,11 @@
         display: flex;
         flex-direction: column;
         width: 289px;
+        margin:0;
 
 
         &-name{
+            margin-left: 0;
             margin-top: 24px;
             margin-bottom: 16px;
             font-weight: bold;
@@ -36,7 +38,9 @@
         }
 
         &-info {
+            margin: 0;
             margin-bottom: 45px;
+
 
             &-item{
                 display: flex;
@@ -93,12 +97,14 @@
 
             &-name {
                 margin-top: 0;
-                margin-bottom: 30px;
+                margin-bottom: 35px;
             }
             &-info {
                 &-item{
                     width: 255px;
                     height: 24px;
+                    @media (max-width: $screen-xs-max) {
+                        margin-left: 0;}
                 }
             }
         }

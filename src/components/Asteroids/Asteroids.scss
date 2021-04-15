@@ -1,8 +1,10 @@
 @import '../../scss/variables.scss';
 
+
 .main {
     @include font-first;
     color: $color-text;
+
 
     .section-inner{
         @media (max-width: $screen-md-max) {
@@ -25,22 +27,30 @@
 
         &-checkbox{
             display: flex;
+            margin-left: 0;
 
             input {
                 background: rgba(0, 0, 0, 0.87);
+                margin:0;
             }
 
             &-description{
                 width: 196px;
                 height: 20px;
                 margin-left: 10px;
+                // @media (max-width: $screen-xs-max) {
+                //     margin: 0  auto;
+                // }
             }
             @media (max-width: $screen-xs-max) {
-                margin-bottom: 16px;
+                margin: 0  auto;
+                margin-left: 20%;
+                padding-bottom: 15px;
             }
         }
 
         &-info {
+            margin-right: 0;
             input {
                 background: transparent;
                 border: none;
@@ -50,6 +60,7 @@
                 width:212px;
                 height:48px;
                 margin-bottom: 16px;
+                
             }
             button{
                 background-color: Transparent;
@@ -63,6 +74,10 @@
             button:hover{
                 color: gold
             }
+            @media (max-width: $screen-xs-max) {
+                margin: 0 auto;
+                margin-left: 20%;
+            }
 
         }
     }
@@ -71,15 +86,3 @@
         margin-right: 16px;
     }
 }
-
-
-// .section-inner{
-//     @media (max-width: $screen-md-max) {
-//         padding: 0;
-//     }
-// }
-
-// @media (max-width: $screen-lg) {
-//     margin-left: 16px;
-//     margin-right: 16px;
-// }
