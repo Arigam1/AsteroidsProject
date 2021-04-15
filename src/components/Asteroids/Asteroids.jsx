@@ -32,7 +32,7 @@ const Asteroids = () => {
         <div className="main-pannel-info">
           Расстояние
           <button onClick={() => setInLunar(false)} ><span style={{ fontWeight: 700 }}>в километрах,</span></button>
-          <button onClick={() => setInLunar(true)}><span style={{ textDecoration: "underline" }}>в дистанциях до луны</span></button>
+          <button onClick={() => setInLunar(true)}><span style={{ textDecoration: "underline", textDecorationSkipInk: "none" }}>в дистанциях до луны</span></button>
         </div>
       </div>
       {filteredAsteroids.map((asteroid) => {

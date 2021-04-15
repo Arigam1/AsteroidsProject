@@ -22,6 +22,7 @@ export const DestroyProvider = ({ children }) => {
 
     const removeAllAstersFromDestroyList = () => {
         setDestroyList([]);
+        console.log(alert('Берем без собеса?!'))
     };
 
     const getAsterFullInfoById = (id) => {

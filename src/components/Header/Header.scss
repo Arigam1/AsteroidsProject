@@ -66,6 +66,9 @@
                 }
             }
         }
+        @media (max-width: $screen-xs-max) {
+            justify-self: flex-start
+        }
 
         &-more{
             display: flex;

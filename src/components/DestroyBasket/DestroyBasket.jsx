@@ -14,11 +14,10 @@ const DestroyBasket = () => {
           {destroyList.map((aster) => {
             return <DestroyItem key={aster.id} asterId={aster.id} />;
           })}
-          <div>
-            <button onClick={() => removeAllAstersFromDestroyList()}>
+          <div style={{ textAlign: 'center' }}>
+            <button style={{ marginBottom: 30 }} className="floating-button" onClick={() => removeAllAstersFromDestroyList()}>
               Секретное оружие
             </button>
-            <span> Только Брюсу не говорите об этом</span>
           </div>
         </div>
       )}
