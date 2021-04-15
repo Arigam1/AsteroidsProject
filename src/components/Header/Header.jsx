@@ -12,8 +12,8 @@ const Header = () => {
                         <div className="section-header-content-logo-description">Сервис мониторинга и уничтожения астероидов, опасно подлетающих к Земле.</div>
                     </div>
                     <div className="section-header-content-more">
-                        <div className="section-header-content-more-types"><NavLink to={`/`}>Астеройды</NavLink></div>
-                        <div className="section-header-content-more-destroy"><NavLink to={`/destroy`}>Уничтожение</NavLink></div>
+                        <div className="section-header-content-more-types"><NavLink to={`/`} activeClassName='active'>Астеройды</NavLink></div>
+                        <div className="section-header-content-more-destroy"><NavLink to={`/destroy`} activeClassName='active'>Уничтожение</NavLink></div>
                     </div>
                 </div>
                 <hr className="hr" />

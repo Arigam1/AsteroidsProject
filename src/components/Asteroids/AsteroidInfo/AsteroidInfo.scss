@@ -4,11 +4,22 @@
     @include font-first;
     color: $color-text;
     .section-inner{
-
+        @media (max-width: $screen-lg) {
+            padding: 0;
+            margin-left: 16px;
+            margin-right: 16px;
+        }
     }
     &-header{
-        height:200px;
+        background-image: url(../../common/img/MIX.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 145px;
         margin-top: 30px;
+        @media (max-width: $screen-xs-max){
+            background:none;
+        }
+        
         
     }
 
@@ -25,6 +36,15 @@
             font-size: 30px;
             line-height: 20px;
             margin-top: 40px;
+            @media(min-width:$screen-sm) and (max-width:$screen-sm-max) {
+                font-size: 25px;
+                line-height: 17px;
+                margin-top: 34px;
+            }
+
+            @media(min-width:$screen-lg) and (max-width:$screen-lg-max) {
+                width: 590px;
+            }
         }
         &-description{
             @include ul-li;
@@ -34,18 +54,86 @@
             .card-first-info {
                 margin-bottom: 45px;
                 width: 750px;
+
+                @media (max-width: $screen-xs-max){
+                    width: 250px;
+                }
+
+                @media(min-width:$screen-sm) and (max-width:$screen-sm-max) {
+                    width: 500px;
+                }
+
+                @media(min-width:$screen-lg) and (max-width:$screen-lg-max) {
+                    width: 570px;
+                }
     
                 &-item{
                     display: flex;
                     margin-bottom: 10px;
                     font-size: 16px;
                     line-height: 24px;
+                    @media (max-width: $screen-xs-max){
+                        &-1 {
+                            
+                        }
+                    }
                 }
+            }
+
+        }
+    }
+    @media (max-width: $screen-xs-max) {
+        height: 391px;
+        width: 288px;
+        border-radius: 10px;
+        position: relative;
+
+        .section-inner{
+            padding: 0;
+            flex-direction: column;
+            height: 391px;
+            width: 288px;
+            border-radius: 10px;
+        }
+
+        &-body{
+            
+            &-title{
+                margin-left: 16px;
+                margin-right: 16px;
+                font-size: 16px;
+                font-weight: bold;
+            }
+            &-description{
+
             }
         }
     }
+    @media (max-width: $screen-xs-max) {
+        height: 550px;
+    }
 }
 
+.infoMobile {
+    @media (max-width: $screen-xs-max) {
+        background-image: url(../../common/img/mixMobile.jpg);
+        background-repeat: no-repeat;
+    }
+}
+
+
+
+// .inner{
+//     max-width: 1280px;
+//     margin: 0 auto;
+//     margin-top: 20px;
+//     padding-right: 157px;
+//     padding-left: 203px;
+//     @media (max-width: $screen-lg) {
+//         padding: 0;
+//         margin-left: 16px;
+//         margin-right: 16px;
+//     }
 
 
 // background: linear-gradient(90deg, #CFF37D 0%, #FF0844 100%);

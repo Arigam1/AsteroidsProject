@@ -20,8 +20,8 @@ const AsteroidInfo = () => {
         <>
             {asterInfo && (
                 <section className="info">
-                    <div className="section-inner">
-                        <div className="info-header" style={{ background: `url(${MIX}) no-repeat` }}>
+                    <div className="section-inner infoMobile">
+                        <div className="info-header">
                         </div>
                         <div className="info-body">
                             <div className="info-body-title">
@@ -29,11 +29,6 @@ const AsteroidInfo = () => {
                             </div>
                             <div className="info-body-description">
                                 <ul className="card-first-info">
-                                    <li className="card-first-info-item">
-                                        <div className="card-first-info-item-1">Время максимального сближения</div>
-                                        <div className="card-first-info-item-2"></div>
-                                        <div className="card-first-info-item-3">{asterInfo.date}.</div>
-                                    </li>
                                     <li className="card-first-info-item">
                                         <div className="card-first-info-item-1">Расстояние</div>
                                         <div className="card-first-info-item-2"></div>
@@ -58,6 +53,11 @@ const AsteroidInfo = () => {
                                         <div className="card-first-info-item-1">Орбита</div>
                                         <div className="card-first-info-item-2"></div>
                                         <div className="card-first-info-item-3">{asterInfo.orbitBody}</div>
+                                    </li>
+                                    <li className="card-first-info-item">
+                                        <div className="card-first-info-item-1">Время максимального сближения</div>
+                                        <div className="card-first-info-item-2"></div>
+                                        <div className="card-first-info-item-3">{asterInfo.date}.</div>
                                     </li>
                                 </ul>
                             </div>

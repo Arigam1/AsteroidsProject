@@ -12,8 +12,8 @@ function App() {
     <Header />
     <Switch>
       <Route path="/" exact render={() => <Asteroids />} />
-      {/* <Route path="/asteroid/:id" render={() => <AsteroidInfo />} />
-      <Route path="/destroy" render={() => <DestroyBasket />} /> */}
+      <Route path="/asteroid/:id" render={() => <AsteroidInfo />} />
+      <Route path="/destroy" render={() => <DestroyBasket />} />
       <Redirect to="/" />
     </Switch>
     <Footer />

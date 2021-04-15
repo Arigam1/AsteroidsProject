@@ -5,25 +5,23 @@
     color: $color-text;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    // background-image: url('../../common/img/big.jpg');
-    // background-repeat: no-repeat;
     border-radius: 10px;
     margin-bottom: 16px;
-
 
     .section-inner {
         display: flex;
         justify-content: flex-end;
         height:200px;
         padding-right: 0;
+        padding-left: 0;
     }
     
-
     &-first {
         @include ul-li;
         display: flex;
         flex-direction: column;
         width: 289px;
+
 
         &-name{
             margin-top: 24px;
@@ -77,9 +75,90 @@
         height: 391px;
         width: 288px;
         border-radius: 10px;
+        position: relative;
 
+        .section-inner{
+            padding: 0;
+            flex-direction: column;
+            height: 391px;
+            width: 288px;
+            border-radius: 10px;
+        }
+
+        &-first {
+            position: absolute;
+            top: 100px;
+            margin-left: 16px;
+            margin-right: 16px;
+
+            &-name {
+                margin-top: 0;
+                margin-bottom: 30px;
+            }
+            &-info {
+                &-item{
+                    width: 255px;
+                    height: 24px;
+                }
+            }
+        }
+        &-second{
+            margin: 0;
+            padding-bottom: 25px;
+        }
     }
 }
 .card:hover {
     @include hover;
+}
+
+
+// карта со средним астеройдом
+.medium{
+    background-image: url(../../common/img/medium.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media (max-width: $screen-xs-max) {
+        background: none;
+    }
+}
+.mediumMobile{
+    @media (max-width: $screen-xs-max) {
+        background-image: url(../../common/img/mediumMobile.jpg);
+        background-repeat: no-repeat;
+    }
+}
+
+// карта с маленьким астеройдом
+
+.small{
+    background-image: url(../../common/img/small.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media (max-width: $screen-xs-max) {
+        background: none;
+    }
+}
+.smallMobile {
+    @media (max-width: $screen-xs-max) {
+        background-image: url(../../common/img/smallMobile.jpg);
+        background-repeat: no-repeat;
+    }
+}
+
+// Картка с большим астеройдом
+
+.big{
+    background-image: url(../../common/img/big.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media (max-width: $screen-xs-max) {
+        background: none;
+    }
+}
+.bigMobile {
+    @media (max-width: $screen-xs-max) {
+        background-image: url(../../common/img/bigMobile.jpg);
+        background-repeat: no-repeat;
+    }
 }

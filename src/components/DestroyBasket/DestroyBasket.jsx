@@ -1,14 +1,14 @@
 import React from "react";
 import DestroyItem from "./DestroyItem";
+import './DestroyBasket.scss'
 import { useDestroyService } from "../../providers/DestroyProvider";
 
 const DestroyBasket = () => {
   const { destroyList, removeAllAstersFromDestroyList } = useDestroyService();
   return (
-    <div className="section-inner" style={{ marginTop: 30 }}>
-      {destroyList.length === 0 && <h1 style={{
-        textAlign: "center"
-      }}>Нет астероидов для ликвидации</h1>}
+    <div className="inner">
+      {destroyList.length === 0 &&
+        <h1 className="inner-h1">Нет астероидов для ликвидации</h1>}
       {destroyList.length > 0 && (
         <div>
           {destroyList.map((aster) => {
@@ -16,9 +16,9 @@ const DestroyBasket = () => {
           })}
           <div>
             <button onClick={() => removeAllAstersFromDestroyList()}>
-              Секретное оружие(уничтожить всё)
+              Секретное оружие
             </button>
-            <span>Только Брюсу не говорите об этом</span>
+            <span> Только Брюсу не говорите об этом</span>
           </div>
         </div>
       )}

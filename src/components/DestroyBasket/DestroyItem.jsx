@@ -3,10 +3,6 @@ import { NavLink } from "react-router-dom";
 import { useAsteroidList } from "../../providers/AsteroidProvider";
 import { useDestroyService } from "../../providers/DestroyProvider";
 import '../Asteroids/Asteroid/Asteroid.scss'
-import dangerBG from './../common/img/big.jpg'
-import small from './../common/img/small.svg'
-import medium from './../common/img/medium.jpg'
-
 
 const DestroyItem = ({ asterId }) => {
   const {
@@ -18,7 +14,7 @@ const DestroyItem = ({ asterId }) => {
 
   if (asteroid.isHazardous === false) {
     if (asteroid.size > 299) {
-      return <div className="card" style={{ background: `url(${medium}) no-repeat` }}>
+      return <div className="card medium mediumMobile">
         <div className="section-inner">
           <div className="card-first">
             <div className="card-first-name"><NavLink to={`/asteroid/${asterId}`}>{asteroid.name}</NavLink></div>
@@ -60,7 +56,7 @@ const DestroyItem = ({ asterId }) => {
         </div>
       </div>
     }
-    return <div className="card" style={{ background: `url(${small}) no-repeat` }}>
+    return <div className="card small smallMobile">
       <div className="section-inner">
         <div className="card-first">
           <div className="card-first-name"><NavLink to={`/asteroid/${asterId}`}>{asteroid.name}</NavLink></div>
@@ -102,7 +98,7 @@ const DestroyItem = ({ asterId }) => {
       </div>
     </div>
   }
-  return <div className="card" style={{ background: `url(${dangerBG}) no-repeat` }}>
+  return <div className="card big bigMobile">
     <div className="section-inner">
       <div className="card-first">
         <div className="card-first-name"><NavLink to={`/asteroid/${asterId}`}>{asteroid.name}</NavLink></div>
