@@ -38,9 +38,7 @@
                 width: 196px;
                 height: 20px;
                 margin-left: 10px;
-                // @media (max-width: $screen-xs-max) {
-                //     margin: 0  auto;
-                // }
+
             }
             @media (max-width: $screen-xs-max) {
                 margin: 0  auto;
@@ -62,15 +60,6 @@
                 margin-bottom: 16px;
                 
             }
-            button{
-                background-color: Transparent;
-                background-repeat:no-repeat;
-                border: none;
-                cursor:pointer;
-                overflow: hidden;
-                font-size: 16px;
-                outline:none;
-            }
             button:hover{
                 color: gold
             }
@@ -85,4 +74,21 @@
         margin-left: 16px;
         margin-right: 16px;
     }
+}
+
+.toggleDistanceBtn {
+    line-height: 1;
+    cursor: pointer;
+    background: transparent;
+    font-size: 16px;
+    color: #111;
+    outline: none;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom: 1px solid #111;
+}
+
+.active {
+    font-weight: 600;
+    border: transparent;
 }
